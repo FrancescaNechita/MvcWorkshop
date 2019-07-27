@@ -3,14 +3,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
 @{
-    var eventText = $"<b>{Model.Name}</b> - {Model.Location} - {Model.Date}!";
-    @:The next event is:
+    var eventName = $"{Model.Name}";
 }
 
-<p>@eventText</p>
-<p>@Html.Raw(eventText)</p>
+@{
+    var eventDetails = $" - {Model.Location} - {Model.Date}!";
+}
+
+<p><b>@eventName</b>@eventDetails</p>
+<p>Description: @Model.Description</p>
+<p>Contact details: @Model.ContactEmail</p>
+<p>@Html.Raw(eventDetails)</p>
 
 <p>
     @if (Model.Location.Contains("Centric"))

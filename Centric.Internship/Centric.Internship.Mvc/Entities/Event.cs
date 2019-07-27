@@ -9,6 +9,7 @@ namespace Centric.Internship.Mvc.Entities
         public string Description { get; set; }
         public string Location { get; set; }
         public string Website { get; set; }
+        public string ContactEmail { get; set; }
         public DateTime Date { get; set; }
     }
 }
