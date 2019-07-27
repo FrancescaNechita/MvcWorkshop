@@ -1,0 +1,15 @@
+﻿body {
+    width: 70%;
+    margin: auto;
+}
+
+.my-app-container {
+    margin-top: 30px;
+}
+
+.footer {
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+    text-align: right;
+}
