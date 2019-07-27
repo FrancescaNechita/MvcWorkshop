@@ -1,0 +1,24 @@
+﻿@model Centric.Internship.Mvc.Models.EventModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    var eventText = $"<b>{Model.Name}</b> - {Model.Location} - {Model.Date}!";
+    @:The next event is:
+}
+
+<p>@eventText</p>
+<p>@Html.Raw(eventText)</p>
+
+<p>
+    @if (Model.Location.Contains("Centric"))
+    {
+        @:It is a company related event!
+    }
+    else
+    {
+        @:It is NOT in a company related event!
+    }
+</p>

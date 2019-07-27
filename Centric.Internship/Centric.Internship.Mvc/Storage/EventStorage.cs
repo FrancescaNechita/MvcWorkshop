@@ -20,7 +20,7 @@ namespace Centric.Internship.Mvc.Storage
                 Name = "Hackathon",
                 Description = "For code lovers",
                 Location = "Centric",
-                Date = new DateTime(2019, 10, 03)
+                Date = new DateTime(2019, 8, 03)
             },
             new Event
             {

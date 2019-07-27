@@ -21,6 +21,7 @@ namespace Centric.Internship.Mvc
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }

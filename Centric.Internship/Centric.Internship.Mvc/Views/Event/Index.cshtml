@@ -1,0 +1,10 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@await Html.PartialAsync("_NextEvent")
+
+@*<a asp-controller="Event" asp-action="Details">See more details..</a>*@
+@Html.ActionLink("See more..", "Details", "Event", new object { }, new { @class = "btn btn-info" })
+
