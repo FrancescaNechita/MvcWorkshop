@@ -3,36 +3,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+@await Html.PartialAsync("_NextEvent")
+<div>
+    <p>@Html.ActionLink("Create new event", "Create", "Event", new object { }, new { @class = "btn btn-info" })</p>
+</div>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-</head>
-<body>
-    <div>
-        @await Html.PartialAsync("_NextEvent")
-        <div>
-            <p>@Html.ActionLink("Create new event", "Create", "Event", new object{}, new { @class = "btn btn-info" })</p>
-        </div>
-        
-        <table class="table table-bordered table-hover">
-            <tr>
-                <th>Date</th>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Details</th>
-            </tr>
-            @foreach (var @eventModel in @Model)
-            {
-                <tr>
-                    <td>@eventModel.Date</td>
-                    <td>@eventModel.Name</td>
-                    <td>@eventModel.Location</td>
-                    <td>@Html.ActionLink("See more..", "Details", "Event", new { id = @eventModel.Id }, new { @class = "btn btn-info" })</td>
-                </tr>
-            }
-        </table>
-    </div>
-</body>
-</html>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Details</th>
+    </tr>
+    @foreach (var @eventModel in @Model)
+    {
+        <tr>
+            <td>@eventModel.Date</td>
+            <td>@eventModel.Name</td>
+            <td>@eventModel.Location</td>
+            <td>@Html.ActionLink("See more..", "Details", "Event", new { id = @eventModel.Id }, new { @class = "btn btn-info" })</td>
+        </tr>
+    }
+</table>
