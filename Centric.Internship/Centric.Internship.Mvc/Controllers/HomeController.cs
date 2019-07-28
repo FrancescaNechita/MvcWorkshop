@@ -16,11 +16,5 @@ namespace Centric.Internship.Mvc.Controllers
             ViewData["CachedMessage"] = "This is some cached content: " + DateTime.Now;
             return View();
         }
-
-        [HttpGet("error")]
-        public ActionResult Error()
-        {
-            throw new ApplicationException();
-        }
     }
 }
