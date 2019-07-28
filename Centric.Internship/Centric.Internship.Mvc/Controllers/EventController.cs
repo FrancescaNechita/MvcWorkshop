@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics.Tracing;
 using System.Linq;
 using Centric.Internship.Mvc.Entities;
 using Centric.Internship.Mvc.Models;
@@ -9,11 +8,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Centric.Internship.Mvc.Controllers
 {
+
     [Route("event/")]
     public class EventController : Controller
     {
-        [Route("")]
         [Route("index")]
+        //[Authorize(Roles = "admin")]
         public ActionResult<IEnumerable<EventModel>> Index()
         {
             ViewData["NextEventName"] = EventStorage.Events.OrderBy(e => e.Date).ElementAt(0).Name;
@@ -29,6 +29,7 @@ namespace Centric.Internship.Mvc.Controllers
         }
 
         [HttpGet("details/{id}")]
+        ////[CustomActionFilter]
         public IActionResult Details([FromRoute]Guid id)
         {
             var eventEntity = EventStorage.Events.FirstOrDefault(e => e.Id.Equals(id));
