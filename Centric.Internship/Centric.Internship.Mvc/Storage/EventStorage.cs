@@ -13,22 +13,32 @@ namespace Centric.Internship.Mvc.Storage
                 Name = "Afterhills",
                 Description = "Music festival",
                 Location = "Dobrovat, Iasi",
-                Date = new DateTime(2019, 8, 23)
+                Date = new DateTime(2019, 8, 23),
+                ContactEmail = "marinela.marchitan@centric.eu",
+                Id = Guid.NewGuid()
             },
             new Event
             {
                 Name = "Hackathon",
                 Description = "For code lovers",
                 Location = "Centric",
-                Date = new DateTime(2019, 10, 03)
+                Date = new DateTime(2019, 10, 03),
+                ContactEmail = "marinela.marchitan@centric.eu",
+                Id = Guid.NewGuid()
             },
             new Event
             {
                 Name = "Marathon",
                 Description = "Running competition",
                 Location = "Iasi",
-                Date = new DateTime(2019, 9, 11)
+                Date = new DateTime(2019, 9, 11),
+                ContactEmail = "marinela.marchitan@centric.eu",
+                Id = Guid.NewGuid()
             }
         };
+        public static void AddEvent(Event model)
+        {
+            Events.Add(model);
+        }
     }
 }
