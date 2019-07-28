@@ -32,7 +32,11 @@ namespace Centric.Internship.Mvc.Controllers
         ////[CustomActionFilter]
         public IActionResult Details([FromRoute]Guid id)
         {
-            var eventEntity = EventStorage.Events.FirstOrDefault(e => e.Id.Equals(id));
+            var eventEntity = EventStorage.Events.FirstOrDefault(e => e.Id == id);
+            if (eventEntity == null)
+            {
+                throw new Exception("Event not found");
+            }
             return View(new EventModel
             {
                 Name = eventEntity.Name,
